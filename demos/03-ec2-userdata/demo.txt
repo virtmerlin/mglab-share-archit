@@ -1,0 +1,55 @@
+=====================================================================
+GIVEN:
+  - An AWS Cloud9 desktop from 01-setup-cloud9
+  - An application to deploy TV Character Hello app (java)
+WHEN:
+  - I create an IAM role to attach to an IAM instance
+  - I create an EC2 Instance with a public IP
+  - I add UserData Profile to the instance
+THEN:
+  - I will be able to access my TV Character Hello app
+SO THAT:
+  - I can learn how to use run once bootstrapping on EC2
+
+NOTE: This demo will provide CLI steps, but may have been demonstrated via the UI during a class delivery
+=====================================================================
+(-) Requires
+
+    01-setup-cloud9
+
+(1) Create CloudFormation 'Stack' that will create an IAM Role for the EC2 Instance, an Instance, and a security group to allow inbound traffic.
+
+    (-) Reset your region & aws account variables in case you launched a new terminal session
+
+        cd ~/environment/mglab-share-archit/demos/03-ec2-userdata/
+
+        export C9_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document |  grep region | awk -F '"' '{print$4}')
+        echo $C9_REGION
+
+        export C9_AWS_ACCT=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | grep accountId | awk -F '"' '{print$4}')
+        echo $C9_AWS_ACCT
+
+    (-) Create 'Stack'
+
+        aws cloudformation deploy --region $C9_REGION --template-file ./artifacts/ec2-userdata-demo-cfn.yaml \
+          --stack-name archit-demos-03-ec2-userdata --tags CLASS=ARCHIT --capabilities CAPABILITY_NAMED_IAM
+
+    (-) In the console: review the New Instance UserData:
+        (-) https://us-west-1.console.aws.amazon.com/ec2/v2/home
+
+(2) Test the TV Character 'Hello' App
+
+    (-) Get the url from the Stack
+
+        aws cloudformation --region $C9_REGION \
+          describe-stacks \
+          --stack-name archit-demos-03-ec2-userdata \
+          --query "Stacks[].Outputs[?OutputKey=='URL'].[OutputValue]" \
+          --output text
+
+    (-) get a hello from the webapp
+
+
+(CLEANUP)
+
+        aws cloudformation delete-stack --region $C9_REGION  --stack-name archit-demos-03-ec2-userdata

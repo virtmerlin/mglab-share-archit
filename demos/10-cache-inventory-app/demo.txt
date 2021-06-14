@@ -1,0 +1,56 @@
+=====================================================================
+GIVEN:
+  - An AWS Cloud9 desktop from 01-setup-cloud9
+  - An a sample PHP Inventory App using Memcached
+  - The Mysql DB from the 04-rds-mysql-access Demo
+WHEN:
+  - I create a CFN stack with V1.1 Inventory App
+THEN:
+  - I will be get the Inventory App
+  - I will also get an ASG + a Memcached Cluster
+SO THAT:
+  - I can see the impact & complexity of Caches in front of a RDBMS
+
+NOTE: This demo will provide CLI steps, but may have been demonstrated via the UI during a class delivery
+=====================================================================
+(-) Requires
+
+    01-setup-cloud9
+    04-rds-mysql-access
+
+(1) Create CloudFormation 'Stack' that will all reqd resources for V1.1 Inventory App with Memcached support.
+
+    (-) https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/sample-templates-appframeworks-us-west-1.html
+
+    (-) Reset your region & aws account variables in case you launched a new terminal session
+
+        cd ~/environment/mglab-share-archit/demos/10-cache-inventory-app/
+
+        export C9_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document |  grep region | awk -F '"' '{print$4}')
+        echo $C9_REGION
+
+        export C9_AWS_ACCT=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | grep accountId | awk -F '"' '{print$4}')
+        echo $C9_AWS_ACCT
+
+    (-) Create 'Stack'
+
+        aws cloudformation deploy --region $C9_REGION --template-file ./artifacts/inventory-memcached.yaml \
+          --stack-name archit-demos-10-cache-inventory-app --tags CLASS=ARCHIT --capabilities CAPABILITY_NAMED_IAM
+
+  (2) Test the faulty cache mechanism behaviour with the application.  What happens when you delete an Item and refresh inventory?
+
+      (-) Get the url from the Stack
+
+          aws cloudformation --region $C9_REGION \
+            describe-stacks \
+            --stack-name archit-demos-10-cache-inventory-app \
+            --query "Stacks[].Outputs[?OutputKey=='AppInstancePublicDNS'].[OutputValue]" \
+            --output text
+
+      (-) Test scenarios and loot at ./artifacts/inventory-app-memcache/show-data.php to see complication in this read ahead cache scenario
+
+
+
+(CLEANUP)
+
+      aws cloudformation --region $C9_REGION delete-stack --stack-name archit-demos-10-cache-inventory-app

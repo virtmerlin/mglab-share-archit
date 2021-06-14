@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A Cloud9 Environment for ARCHIT Demo(s)
+
+Resources:
+  MyC9Environment:
+    Type: "AWS::Cloud9::EnvironmentEC2"
+    Properties:
+      Name: archit-demos-wkstn
+      Description: "AWS Cloud9 instance for archit DEMOS"
+      InstanceType: t3.large
+      SubnetId: !ImportValue archit-demos-networking-C9Subnet
+      AutomaticStopTimeMinutes: 60
+
+Outputs:
+  MyC9Environment:
+    Description: Environment provisioned
+    Value: !GetAtt  MyC9Environment.Name

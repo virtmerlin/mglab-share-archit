@@ -1,0 +1,5 @@
+{
+  "Type": "archive-retrieval",
+  "ArchiveId": "<ARCHIVE_ID>",
+  "Description": "Retrieve archive"
+}

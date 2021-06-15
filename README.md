@@ -44,7 +44,7 @@ Demo Name     | Demo Link     | Last Automated Test Timestamp
 --- | ---| ---
 01-setup-cloud9     | [link](https://github.com/virtmerlin/mglab-share-archit/blob/main/demos/01-setup-cloud9/demo.md)   | Not Yet Automated
 02-s3-setup-simple-webapp     | [link](https://github.com/virtmerlin/mglab-share-archit/blob/main/demos/02-s3-setup-simple-webapp/demo.md)   | Not Yet Automated
-02-s3-multi-part-upload     | ![link](demos/02-s3-multi-part-upload/demo.txt)   | Not Yet Automated
+02-s3-multi-part-upload     | [link](demos/02-s3-multi-part-upload/demo.md)   | Not Yet Automated
 02-s3glacier-vault     | ![link](demos/02-s3glacier-vault/demo.txt)   | Not Yet Automated
 03-ec2-userdata     | ![link](demos/03-ec2-userdata/demo.txt)   | Not Yet Automated
 04-rds-mysql-access     | ![link](demos/04-rds-mysql-access/demo.txt)   | Not Yet Automated

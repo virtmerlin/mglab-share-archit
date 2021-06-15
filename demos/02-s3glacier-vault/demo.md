@@ -90,7 +90,7 @@ ARCHIVE_BYTES=$(eval $CMD2)
 echo $ARCHIVE_JOBID
 echo $ARCHIVE_BYTES
 ```
-- Lets actually get our Archive back from Glacier now ...
+- Lets actually get our Archive back from Glacier now ... it wull pull the zip from Glacier to the file named my-restored.tgz
 ```
 aws glacier get-job-output --account-id - --vault-name mglab-demo-archit --region $C9_REGION --job-id $ARCHIVE_JOBID --range "bytes=$ARCHIVE_BYTES" my-restored.tgz
 ```
@@ -101,7 +101,7 @@ aws glacier get-job-output --account-id - --vault-name mglab-demo-archit --regio
 Only run these scripts if you are done cleaning &/or running all dependent demos.
 - [DOC-LINK: Glacier Cleaning up Archives](https://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive-using-cli.html)
 
-The command below havent yet been sorted into an order to be 'repeatable' , but following them you should be able to clean up that Glacier Vault by first deleting all archives via the cli, then using the console to delete the vault.  be patient (hours).
+The commands below haven't yet been sorted into an order to be 'repeatable' , but following them you should be able to clean up that Glacier Vault by first deleting all archives via the cli, then using the console to delete the vault.  be patient (hours).
 
         CMD3="aws glacier list-jobs --account-id - --vault-name mglab-demo-archit --region $C9_REGION | jq -r '.JobList[] | select(.Action == \"InventoryRetrieval\") | .JobId'"
         ARCHIVE_INV_JOBID=$(eval $CMD3)

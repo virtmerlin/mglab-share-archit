@@ -5,9 +5,9 @@
 
 ##### WHEN:
 
-  - I create an IAM role to attach to an IAM instance
-  - I create an EC2 Instance with a public IP
-  - I add UserData Profile to the instance
+  - I create an IAM role to attach to an IAM instance via CloudFormation
+  - I create an EC2 Instance with a public IP via CloudFormation
+  - I add UserData Profile to the instance via CloudFormation
 
 ##### THEN:
   - I will be able to access my TV Character Hello app
@@ -43,7 +43,7 @@ aws cloudformation deploy --region $C9_REGION --template-file ./artifacts/ec2-us
     --stack-name archit-demos-03-ec2-userdata --tags CLASS=ARCHIT --capabilities CAPABILITY_NAMED_IAM
 ```
 - In the console: review the New Instance UserData
-- [AWS Console](https://console.aws.amazon.com/ec2/v2/home) ... (you may need to select your region)
+  - [AWS Console](https://console.aws.amazon.com/ec2/v2/home) ... (you may need to select your region)
 
 ##### 2: Test the TV Character 'Hello' App
 - Get the url from the Stack

@@ -75,6 +75,7 @@ watch nslookup $DBENDPOINT
 ```
 - In the RDS console: Goto 'Actions' & reboot the RDS instance 'with failover'
   - [AWS RDS Console](https://console.aws.amazon.com/rds/home) ... (you may need to select your region)
+  
 - Observe the DNS hostname resolution for the DB 'failover' to the secondary in the Cloud9 terminal
 
 ---------------------------------------------------------------

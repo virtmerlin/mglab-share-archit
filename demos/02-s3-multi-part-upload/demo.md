@@ -31,7 +31,7 @@
 [DOC-LINK:s3-multipart-upload-cli](https://aws.amazon.com/premiumsupport/knowledge-center/s3-multipart-upload-cli/)
 - Reset your region & AWS account variables in case you launched a new terminal session
 ```
-cd ~/environment/mglab-share-archit/demos/02-s3-setup-simple-webapp/
+cd ~/environment/mglab-share-archit/demos/02-s3-multi-part-upload/
 export C9_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document |  grep region | awk -F '"' '{print$4}')
 echo $C9_REGION
 export C9_AWS_ACCT=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | grep accountId | awk -F '"' '{print$4}')
@@ -81,4 +81,4 @@ echo "http://$BUCKET_NAME.s3-website-$C9_REGION.amazonaws.com"
 ```
 
 #### CLEANUP
-- Uses CLEANUP from 02-s3-setup-simple-webapp 
+- Uses CLEANUP from 02-s3-setup-simple-webapp

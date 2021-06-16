@@ -39,7 +39,7 @@ echo $C9_AWS_ACCT
 ```
 - Copy a large video file down to Cloud9 so we can upload it to our bucket
 ```
-mkdir mywebsite-v2 && cd mywebsite-v2 && wget -c https://mglab-aws-samples.s3.amazonaws.com/classes/archit/02/archit-s3-car-site-v2.tgz -O - | tar -xz && cd ..
+mkdir mywebsite-v2 && cd mywebsite-v2 && wget -c https://mglab-aws-samples.s3.amazonaws.com/classes/archit/02/archit-s3-car-site-v2.1.tgz -O - | tar -xz && cd ..
 ls -allh ./mywebsite-v2/videos/*
 ```
 - Get the Bucket name created from demo 02-s3-setup-simple-webapp

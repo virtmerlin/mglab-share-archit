@@ -62,6 +62,8 @@ aws cloudformation --region $C9_REGION \
 
 ##### 3: Setup R53 & ACM Certificates
 - Optional Challenge:
+  - [DOC-LINK: ACM](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html)
+  - [DOC-LINK: R53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
   - Create an ACM Certificate with appropriate SAN via Console
   - Create Route53 CNAME entry using from your SAN to the Load Balancer URL
 

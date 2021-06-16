@@ -54,6 +54,7 @@ aws cloudformation --region $C9_REGION \
     --output text
 ```
 - Test inventory update & delete scenarios and look at _./artifacts/inventory-app-memcache/show-data.php_ to see the logic flaw in this read ahead cache scenario
+  - [Code Link](https://github.com/virtmerlin/mglab-share-archit/blob/main/demos/10-cache-inventory-app/artifacts/inventory-app-memcache/show-data.php#L48-#L71)
 
 ---------------------------------------------------------------
 ---------------------------------------------------------------

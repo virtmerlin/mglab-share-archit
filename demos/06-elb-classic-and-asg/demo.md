@@ -67,7 +67,7 @@ aws cloudformation --region $C9_REGION \
 
 ##### 4: Run scaling tests
 - Optional Challenge:
-  - Use a service (like Jmeter/Blazemeter) to genrate load and see ASG autoscale
+  - Use a service (like Jmeter/Blazemeter) to generate load and see ASG the autoscale
 
 ---------------------------------------------------------------
 ---------------------------------------------------------------

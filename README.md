@@ -48,7 +48,7 @@ Demo Name     | Demo Link     | Last Automated Test Timestamp
 02-s3glacier-vault     | [link](demos/02-s3glacier-vault/demo.md)   | Not Yet Automated
 03-ec2-userdata     | [link](demos/03-ec2-userdata/demo.md)   | Not Yet Automated
 04-rds-mysql-access     | [link](demos/04-rds-mysql-access/demo.md)   | Not Yet Automated
-06-elb-classic-and-asg     | ![link](demos/06-elb-classic-and-asg/demo.txt)   | Not Yet Automated
+06-elb-classic-and-asg     | [link](demos/06-elb-classic-and-asg/demo.md)   | Not Yet Automated
 09-cloudformation-and-cfnhup     | ![link](demos/09-cloudformation-and-cfnhup/demo.txt)   | Not Yet Automated
 10-cache-inventory-app     | ![link](demos/10-cache-inventory-app/demo.txt)   | Not Yet Automated
 12-ecs-fargate-microservice     | ![link](demos/12-ecs-fargate-microservice/demo.txt)   | Not Yet Automated

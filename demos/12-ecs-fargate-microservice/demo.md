@@ -57,6 +57,9 @@ docker build -f ./artifacts/Dockerfile . -t archit-demo-12-tv:latest -t archit-d
 ```
 docker run --name crazy-tv -p 9000:8080 -d archit-demo-12-tv:latest
 curl http://localhost:9000
+```
+- Stop the Container
+```
 docker stop crazy-tv
 ```
 - Tag the built image to push it up to ECR, then push it, after running these commands you should see an image in the ECR repository

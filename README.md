@@ -51,4 +51,4 @@ Demo Name     | Demo Link     | Last Automated Test Timestamp
 06-elb-classic-and-asg     | [link](demos/06-elb-classic-and-asg/demo.md)   | Not Yet Automated
 09-cloudformation-and-cfnhup     | [link](demos/09-cloudformation-and-cfnhup/demo.md)   | Not Yet Automated
 10-cache-inventory-app     | [link](demos/10-cache-inventory-app/demo.md)   | Not Yet Automated
-12-ecs-fargate-microservice     | WIP ![link](demos/12-ecs-fargate-microservice/demo.txt)   | Not Yet Automated
+12-ecs-fargate-microservice     | WIP [link](demos/12-ecs-fargate-microservice/demo.md)   | Not Yet Automated
